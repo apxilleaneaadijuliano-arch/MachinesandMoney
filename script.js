@@ -1,6 +1,5 @@
-// ===== SCROLL REVEAL =====
+// SCROLL REVEAL
 const cards = document.querySelectorAll(".card");
-
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
@@ -9,27 +8,31 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.2 });
-
 cards.forEach(card => observer.observe(card));
 
-// ===== PROJECTOR-SAFE COLOR THEMES =====
+// COLOR THEMES
 const themes = [
-  { accent: "#1b5e20", card: "#ffffff", bg: "#f4f4f4" },
-  { accent: "#0d47a1", card: "#ffffff", bg: "#e8f0fe" },
-  { accent: "#8d6e00", card: "#ffffff", bg: "#fff8e1" }
+  { bg1: "#22c1c3", bg2: "#fdbb2d" },
+  { bg1: "#f2709c", bg2: "#ff9472" },
+  { bg1: "#6a11cb", bg2: "#2575fc" },
+  { bg1: "#11998e", bg2: "#38ef7d" },
+  { bg1: "#fc5c7d", bg2: "#6a82fb" }
 ];
 
-let index = 0;
+let themeIndex = 0;
+function changeTheme(){
+  themeIndex = (themeIndex + 1) % themes.length;
+  const theme = themes[themeIndex];
+  document.body.style.background = `linear-gradient(135deg, ${theme.bg1}, ${theme.bg2})`;
+  document.querySelector(".theme-btn").style.background = theme.bg1;
+}
+setInterval(changeTheme, 5000);
+document.querySelector(".theme-btn").addEventListener("click", changeTheme);
 
-document.querySelector(".theme-btn").addEventListener("click", () => {
-  index = (index + 1) % themes.length;
-  const theme = themes[index];
-  document.documentElement.style.setProperty("--accent", theme.accent);
-  document.documentElement.style.setProperty("--card", theme.card);
-  document.body.style.backgroundColor = theme.bg;
-  document.querySelector("header").style.backgroundColor = theme.accent;
-  document.querySelector(".theme-btn").style.backgroundColor = theme.accent;
-  document.querySelectorAll(".card").forEach(card => card.style.borderColor = theme.accent);
+// INTERACTIVE EXPAND BUTTONS
+document.querySelectorAll(".expand-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const text = btn.nextElementSibling;
+    text.style.display = text.style.display === "block" ? "none" : "block";
+  });
 });
-
-
