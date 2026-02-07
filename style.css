@@ -1,26 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@600;700&display=swap');
 
-* {
-  box-sizing: border-box;
-}
-
-:root {
-  --bg: #f4f4f4;
-  --card: #ffffff;
-  --accent: #1b5e20;
-  --text: #111111;
-  --title: #111111;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 1s ease, color 1s ease;
+  background: linear-gradient(135deg, #22c1c3, #fdbb2d);
+  color: #111;
+  transition: background 2s ease, color 1s ease;
 }
 
-/* ===== HEADER ===== */
 header {
   min-height: 80vh;
   display: flex;
@@ -29,14 +18,15 @@ header {
   align-items: center;
   text-align: center;
   padding: 60px 20px;
-  background-color: var(--accent);
-  color: #ffffff;
-  transition: background 1s ease;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  border-bottom: 5px solid #fff;
+  transition: background 2s ease;
 }
 
-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
+header h1 { 
+  font-family: 'Playfair Display', serif; 
+  font-size: 3.5rem; 
   margin: 0;
 }
 
@@ -47,106 +37,107 @@ header h1 {
   opacity: 0.9;
 }
 
-/* ===== NAV ===== */
 nav {
   position: sticky;
   top: 0;
-  background: #111111;
+  background: #111;
   display: flex;
   justify-content: center;
   gap: 40px;
   padding: 18px;
-  border-bottom: 3px solid var(--accent);
+  border-bottom: 3px solid #fff;
 }
 
 nav a {
-  color: var(--accent);
+  color: #22c1c3;
   text-decoration: none;
   font-weight: 700;
   font-size: 1.1rem;
   position: relative;
+  transition: color 0.5s ease;
 }
 
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0%;
-  height: 2px;
-  background: #ffffff;
-  transition: 0.3s;
-}
+nav a:hover { color: #fdbb2d; }
 
-nav a:hover::after {
-  width: 100%;
-}
-
-/* ===== MAIN CONTENT ===== */
-main {
-  padding: 60px 0;
-}
+main { padding: 60px 0; }
 
 .card {
   width: 85%;
   max-width: 1000px;
   margin: 80px auto;
   padding: 50px;
-  background: var(--card);
+  background: #ffffffaa;
   border-radius: 25px;
-  border: 3px solid var(--accent);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  border: 3px solid #22c1c3;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
   opacity: 0;
   transform: translateY(60px);
-  transition: opacity 0.9s ease, transform 0.9s ease, border-color 1s ease;
+  transition: all 0.9s ease;
+  cursor: pointer;
+}
+
+.card:hover { 
+  transform: scale(1.03); 
+  border-color: #fdbb2d;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.25);
 }
 
 .card h2 {
   font-family: 'Playfair Display', serif;
   font-size: 2.4rem;
-  color: var(--title);
   margin-bottom: 20px;
 }
 
-.card p {
-  font-size: 1.25rem;
-  line-height: 1.8;
-}
+.card p { font-size: 1.25rem; line-height: 1.8; }
 
-/* ===== IMAGES ===== */
 .section-img {
   width: 100%;
   max-width: 500px;
   margin: 20px auto;
   display: block;
   border-radius: 18px;
-  border: 3px solid var(--accent);
+  border: 3px solid #22c1c3;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-/* ===== THEME BUTTON ===== */
+/* Interactive Expandable Text */
+.expand-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #22c1c3;
+  color: #fff;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.5s ease;
+}
+
+.expand-btn:hover { background: #fdbb2d; }
+
+.expand-text { display: none; margin-top: 10px; }
+
+/* Theme Button */
 .theme-btn {
   position: fixed;
   bottom: 25px;
   right: 25px;
   padding: 14px 22px;
-  background: var(--accent);
-  color: #ffffff;
+  background: #22c1c3;
+  color: #fff;
   border: none;
   border-radius: 30px;
   font-weight: 800;
   cursor: pointer;
   box-shadow: 0 0 25px rgba(0,0,0,0.2);
-  transition: background 1s ease;
+  transition: all 1s ease;
 }
 
-/* ===== FOOTER ===== */
 footer {
   padding: 50px;
   text-align: center;
-  background: #111111;
-  border-top: 3px solid var(--accent);
+  background: #111;
+  border-top: 3px solid #22c1c3;
+  color: #fff;
   font-weight: 600;
-  color: #ffffff;
 }
-
