@@ -3,7 +3,7 @@ const cards = document.querySelectorAll(".card");
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
+    if(entry.isIntersecting){
       entry.target.style.opacity = "1";
       entry.target.style.transform = "translateY(0)";
     }
@@ -12,26 +12,24 @@ const observer = new IntersectionObserver(entries => {
 
 cards.forEach(card => observer.observe(card));
 
-// ===== COLOR THEMES =====
+// ===== PROJECTOR-SAFE COLOR THEMES =====
 const themes = [
-  { accent: "#22d3ee", soft: "#67e8f9" }, // cyan
-  { accent: "#a78bfa", soft: "#c4b5fd" }, // purple
-  { accent: "#facc15", soft: "#fde047" }, // gold
-  { accent: "#34d399", soft: "#6ee7b7" }, // green
-  { accent: "#fb7185", soft: "#fda4af" }  // pink
+  { accent: "#1b5e20", card: "#ffffff", bg: "#f4f4f4" },
+  { accent: "#0d47a1", card: "#ffffff", bg: "#e8f0fe" },
+  { accent: "#8d6e00", card: "#ffffff", bg: "#fff8e1" }
 ];
 
 let index = 0;
 
-function changeTheme() {
-  document.documentElement.style.setProperty("--accent", themes[index].accent);
-  document.documentElement.style.setProperty("--accent-soft", themes[index].soft);
+document.querySelector(".theme-btn").addEventListener("click", () => {
   index = (index + 1) % themes.length;
-}
+  const theme = themes[index];
+  document.documentElement.style.setProperty("--accent", theme.accent);
+  document.documentElement.style.setProperty("--card", theme.card);
+  document.body.style.backgroundColor = theme.bg;
+  document.querySelector("header").style.backgroundColor = theme.accent;
+  document.querySelector(".theme-btn").style.backgroundColor = theme.accent;
+  document.querySelectorAll(".card").forEach(card => card.style.borderColor = theme.accent);
+});
 
-// auto change
-setInterval(changeTheme, 6000);
-
-// manual button
-document.querySelector(".theme-btn").addEventListener("click", changeTheme);
 
