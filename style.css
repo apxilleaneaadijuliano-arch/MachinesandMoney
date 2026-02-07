@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@600;700&display=swap');
 
 :root {
-  --dark-green: #0b3d2e;
-  --lime: #7CFF9B;
-  --gold: #FFD166;
-  --red: #EF476F;
-  --blue: #118AB2;
   --bg: #0f172a;
-  --card-bg: #111827;
+  --card: #111827;
+  --accent: #22d3ee;
+  --accent-soft: #67e8f9;
+  --text: #e5e7eb;
+  --title: #f8fafc;
 }
 
 * {
@@ -16,57 +15,67 @@
 
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background: radial-gradient(circle at top, #1f2933, #020617);
-  color: #e5e7eb;
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, var(--bg), #020617);
+  color: var(--text);
+  transition: background 1s ease;
 }
 
-/* HEADER */
+/* ===== HEADER / HERO ===== */
 header {
-  padding: 80px 20px;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  background: linear-gradient(135deg, #118ab2, #06d6a0);
+  padding: 60px 20px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
   color: #020617;
 }
 
 header h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
+  font-size: 4rem;
   margin: 0;
 }
 
 .subtitle {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
+  max-width: 700px;
   opacity: 0.9;
 }
 
-/* NAV */
+/* ===== NAV ===== */
 nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #020617;
   display: flex;
   justify-content: center;
-  gap: 40px;
-  background: #020617;
+  gap: 50px;
   padding: 18px;
-  border-bottom: 3px solid var(--lime);
+  border-bottom: 3px solid var(--accent);
 }
 
 nav a {
-  color: var(--lime);
+  color: var(--accent);
   text-decoration: none;
   font-weight: 700;
-  font-size: 1.1rem;
+  letter-spacing: 1px;
   position: relative;
 }
 
 nav a::after {
   content: "";
   position: absolute;
-  width: 0%;
-  height: 2px;
-  background: var(--gold);
   left: 0;
   bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent-soft);
   transition: 0.3s;
 }
 
@@ -74,48 +83,68 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* SECTIONS */
+/* ===== MAIN CONTENT ===== */
+main {
+  padding: 80px 0;
+}
+
 .card {
   width: 85%;
   max-width: 1000px;
-  margin: 80px auto;
-  padding: 50px;
-  background: linear-gradient(145deg, #020617, #111827);
-  border-radius: 28px;
-  border: 3px solid transparent;
-  background-clip: padding-box;
+  margin: 120px auto;
+  padding: 60px;
+  background: linear-gradient(145deg, #020617, var(--card));
+  border-radius: 30px;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 transparent;
   position: relative;
-  font-size: 1.2rem;
-  line-height: 1.9;
   opacity: 0;
-  transform: translateY(60px);
+  transform: translateY(80px);
+  transition: 0.9s ease;
 }
 
-/* GLOW BORDERS */
 .card::before {
   content: "";
   position: absolute;
-  inset: -3px;
+  inset: -4px;
+  border-radius: 34px;
+  background: linear-gradient(120deg, var(--accent), transparent);
   z-index: -1;
-  border-radius: 30px;
-  background: linear-gradient(120deg, var(--lime), var(--gold), var(--blue));
 }
 
 .card h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 2.4rem;
-  margin-bottom: 20px;
-  color: var(--gold);
+  font-size: 2.8rem;
+  color: var(--title);
+  margin-bottom: 25px;
 }
 
-/* FOOTER */
+.card p {
+  font-size: 1.25rem;
+  line-height: 1.9;
+}
+
+/* ===== THEME BUTTON ===== */
+.theme-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  padding: 14px 22px;
+  background: var(--accent);
+  color: #020617;
+  border: none;
+  border-radius: 30px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 0 25px var(--accent-soft);
+}
+
+/* ===== FOOTER ===== */
 footer {
-  margin-top: 120px;
-  padding: 40px;
+  padding: 50px;
   text-align: center;
   background: #020617;
-  border-top: 3px solid var(--lime);
+  border-top: 3px solid var(--accent);
   font-weight: 600;
-  letter-spacing: 1px;
 }
 
