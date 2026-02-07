@@ -1,36 +1,163 @@
-// ===== SCROLL REVEAL =====
-const cards = document.querySelectorAll(".card");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@600;700&display=swap');
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = "1";
-      entry.target.style.transform = "translateY(0)";
-    }
-  });
-}, { threshold: 0.2 });
-
-cards.forEach(card => observer.observe(card));
-
-// ===== COLOR THEMES =====
-const themes = [
-  { accent: "#22d3ee", soft: "#67e8f9" }, // cyan
-  { accent: "#a78bfa", soft: "#c4b5fd" }, // purple
-  { accent: "#facc15", soft: "#fde047" }, // gold
-  { accent: "#34d399", soft: "#6ee7b7" }, // green
-  { accent: "#fb7185", soft: "#fda4af" }  // pink
-];
-
-let index = 0;
-
-function changeTheme() {
-  document.documentElement.style.setProperty("--accent", themes[index].accent);
-  document.documentElement.style.setProperty("--accent-soft", themes[index].soft);
-  index = (index + 1) % themes.length;
+:root {
+  --bg: #0f172a;
+  --card: #111827;
+  --accent: #22d3ee;
+  --accent-soft: #67e8f9;
+  --text: #e5e7eb;
+  --title: #f8fafc;
 }
 
-// auto change
-setInterval(changeTheme, 6000);
+* {
+  box-sizing: border-box;
+}
 
-// manual button
-document.querySelector(".theme-btn").addEventListener("click", changeTheme);
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, var(--bg), #020617);
+  color: var(--text);
+  transition: background 1s ease;
+}
+
+/* ===== HEADER ===== */
+header {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+  color: #020617;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  max-width: 800px;
+  font-weight: 600;
+}
+
+/* ===== NAV ===== */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #020617;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 18px;
+  border-bottom: 3px solid var(--accent);
+}
+
+nav a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent-soft);
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ===== MAIN CONTENT ===== */
+main {
+  padding: 80px 0;
+}
+
+.card {
+  width: 85%;
+  max-width: 1000px;
+  margin: 120px auto;
+  padding: 60px;
+  background: linear-gradient(145deg, #020617, var(--card));
+  border-radius: 30px;
+  border: 2px solid var(--accent);
+  position: relative;
+  opacity: 0;
+  transform: translateY(80px);
+  transition: 0.9s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 34px;
+  background: linear-gradient(120deg, var(--accent), transparent);
+  z-index: -1;
+}
+
+.card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: var(--title);
+}
+
+.card p {
+  font-size: 1.25rem;
+  line-height: 1.9;
+}
+
+/* ===== EXPANDABLE ===== */
+.expand-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 25px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.expand-text {
+  display: none;
+  margin-top: 20px;
+}
+
+/* ===== THEME BUTTON ===== */
+.theme-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  padding: 14px 22px;
+  background: var(--accent);
+  color: #020617;
+  border: none;
+  border-radius: 30px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 0 25px var(--accent-soft);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  padding: 50px;
+  text-align: center;
+  background: #020617;
+  border-top: 3px solid var(--accent);
+  font-weight: 600;
+}
