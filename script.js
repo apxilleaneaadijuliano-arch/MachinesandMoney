@@ -1,38 +1,59 @@
-// SCROLL REVEAL
+// ===== SCROLL REVEAL =====
 const cards = document.querySelectorAll(".card");
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if(entry.isIntersecting){
+    if (entry.isIntersecting) {
       entry.target.style.opacity = "1";
       entry.target.style.transform = "translateY(0)";
     }
   });
 }, { threshold: 0.2 });
+
 cards.forEach(card => observer.observe(card));
 
-// COLOR THEMES
+
+// ===== SAFE COLOR THEMES (SAME VIBE) =====
 const themes = [
-  { bg1: "#22c1c3", bg2: "#fdbb2d" },
-  { bg1: "#f2709c", bg2: "#ff9472" },
-  { bg1: "#6a11cb", bg2: "#2575fc" },
-  { bg1: "#11998e", bg2: "#38ef7d" },
-  { bg1: "#fc5c7d", bg2: "#6a82fb" }
+  {
+    bg: "#0f172a",
+    card: "#111827",
+    accent: "#22d3ee",
+    soft: "#67e8f9"
+  },
+  {
+    bg: "#020617",
+    card: "#020617",
+    accent: "#38bdf8",
+    soft: "#7dd3fc"
+  },
+  {
+    bg: "#020617",
+    card: "#111827",
+    accent: "#2dd4bf",
+    soft: "#5eead4"
+  }
 ];
 
-let themeIndex = 0;
-function changeTheme(){
-  themeIndex = (themeIndex + 1) % themes.length;
-  const theme = themes[themeIndex];
-  document.body.style.background = `linear-gradient(135deg, ${theme.bg1}, ${theme.bg2})`;
-  document.querySelector(".theme-btn").style.background = theme.bg1;
-}
-setInterval(changeTheme, 5000);
-document.querySelector(".theme-btn").addEventListener("click", changeTheme);
+let current = 0;
 
-// INTERACTIVE EXPAND BUTTONS
-document.querySelectorAll(".expand-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const text = btn.nextElementSibling;
-    text.style.display = text.style.display === "block" ? "none" : "block";
-  });
+document.querySelector(".theme-btn").addEventListener("click", () => {
+  current = (current + 1) % themes.length;
+  const t = themes[current];
+
+  document.documentElement.style.setProperty("--bg", t.bg);
+  document.documentElement.style.setProperty("--card", t.card);
+  document.documentElement.style.setProperty("--accent", t.accent);
+  document.documentElement.style.setProperty("--accent-soft", t.soft);
 });
+
+
+// ===== SUBTLE GLOW PULSE (VERY SOFT) =====
+setInterval(() => {
+  document.querySelectorAll(".card").forEach(card => {
+    card.style.boxShadow = `0 0 35px var(--accent-soft)`;
+    setTimeout(() => {
+      card.style.boxShadow = "0 0 0 transparent";
+    }, 1200);
+  });
+}, 9000);
