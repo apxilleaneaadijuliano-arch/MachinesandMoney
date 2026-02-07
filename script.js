@@ -34,3 +34,4 @@ setInterval(changeTheme, 6000);
 
 // manual button
 document.querySelector(".theme-btn").addEventListener("click", changeTheme);
+
