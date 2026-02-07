@@ -1,59 +1,50 @@
 body {
-  font-family: Verdana, Arial, sans-serif;
-  margin: 40px;
-  background-color: #ecf0f1;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background-color: #f4fbf6;
   color: #2c3e50;
-  line-height: 1.6;
-}
-
-/* Headings */
-h1 {
-  font-family: Impact, Oswald, sans-serif;
-  color: #c0392b; /* deep red for "high cost" */
   text-align: center;
-  margin-bottom: 20px;
 }
 
-h2, h3 {
-  color: #007acc; /* accent blue for tech feel */
-  margin-top: 20px;
+header {
+  background: linear-gradient(90deg, #27ae60, #2ecc71);
+  color: white;
+  padding: 40px 20px;
 }
 
-/* Paragraphs */
-p {
-  margin-bottom: 15px;
-}
-
-/* Navigation bar */
 nav {
-  margin-top: 30px;
-  text-align: center;
+  background-color: #1e8449;
+  padding: 15px;
 }
 
 nav a {
-  margin: 0 15px;
+  color: white;
   text-decoration: none;
-  color: #c0392b;
+  margin: 0 15px;
   font-weight: bold;
 }
 
 nav a:hover {
   text-decoration: underline;
-  color: #007acc;
 }
 
-/* Lists */
-ul {
-  list-style-type: square;
-  margin-left: 20px;
+.card {
+  width: 85%;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
 }
 
-/* Page container */
-body {
-  border: 3px solid #2c3e50;
-  border-radius: 10px;
-  padding: 20px;
-  max-width: 900px;
-  margin: auto;
-  background-color: #ffffff;
+.card:hover {
+  transform: scale(1.03);
+}
+
+footer {
+  background-color: #1e8449;
+  color: white;
+  padding: 25px;
+  margin-top: 50px;
 }
