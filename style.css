@@ -1,50 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
-  background-color: #f4fbf6;
+  background-color: #f0fff6;
   color: #2c3e50;
   text-align: center;
 }
 
 header {
-  background: linear-gradient(90deg, #27ae60, #2ecc71);
+  background: linear-gradient(90deg, #16a085, #2ecc71);
   color: white;
-  padding: 40px 20px;
+  padding: 55px 20px;
+}
+
+header h1 {
+  font-size: 3em;
+}
+
+.subtitle {
+  font-size: 1.4em;
 }
 
 nav {
-  background-color: #1e8449;
-  padding: 15px;
+  background-color: #117864;
+  padding: 18px;
 }
 
 nav a {
   color: white;
+  margin: 0 18px;
   text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-}
-
-nav a:hover {
-  text-decoration: underline;
+  font-size: 1.2em;
+  font-weight: 600;
 }
 
 .card {
   width: 85%;
-  margin: 40px auto;
-  padding: 30px;
-  background-color: white;
-  border-radius: 25px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  margin: 45px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+  font-size: 1.25em;
+  line-height: 1.8;
   transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: scale(1.03);
+  transform: scale(1.04);
+}
+
+.green-border { border: 10px double #27ae60; }
+.yellow-border { border: 10px double #f1c40f; }
+.red-border { border: 10px double #e74c3c; }
+.blue-border { border: 10px double #3498db; }
+
+.emoji {
+  font-size: 3.5em;
+  margin: 15px 0;
+}
+
+.members {
+  list-style: none;
+  padding: 0;
+  font-size: 1.3em;
+}
+
+.members li {
+  margin: 12px 0;
 }
 
 footer {
-  background-color: #1e8449;
+  background-color: #117864;
   color: white;
-  padding: 25px;
-  margin-top: 50px;
+  padding: 30px;
+  font-size: 1.2em;
+  margin-top: 60px;
 }
