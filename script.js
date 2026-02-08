@@ -1,27 +1,38 @@
-// Animated color-changing headers
-const headers = document.querySelectorAll('h1, h2');
-setInterval(() => {
-  headers.forEach(h => {
-    h.style.color = `hsl(${Math.floor(Math.random() * 360)}, 70%, 60%)`;
-  });
-}, 2500);
+// SCROLL REVEAL
+const cards = document.querySelectorAll(".card");
 
-// Glow effect for nav links
-document.querySelectorAll('nav a').forEach(link => {
-  link.addEventListener('mouseover', () => {
-    link.style.boxShadow = "0 0 20px #fff";
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = "1";
+      entry.target.style.transform = "translateY(0)";
+    }
   });
-  link.addEventListener('mouseout', () => {
-    link.style.boxShadow = "none";
-  });
+}, { threshold: 0.2 });
+
+cards.forEach(card => observer.observe(card));
+
+// COLOR THEMES
+const themes = [
+  { bg:"#0f172a", card:"#111827", accent:"#22d3ee", soft:"#67e8f9" },
+  { bg:"#020617", card:"#020617", accent:"#38bdf8", soft:"#7dd3fc" },
+  { bg:"#020617", card:"#111827", accent:"#2dd4bf", soft:"#5eead4" }
+];
+
+let current = 0;
+document.querySelector(".theme-btn").addEventListener("click", () => {
+  current = (current + 1) % themes.length;
+  const t = themes[current];
+  document.documentElement.style.setProperty("--bg", t.bg);
+  document.documentElement.style.setProperty("--card", t.card);
+  document.documentElement.style.setProperty("--accent", t.accent);
+  document.documentElement.style.setProperty("--accent-soft", t.soft);
 });
 
-// Smooth scroll for internal anchors (future-proof if you add #sections)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
+// EXPAND BUTTONS
+document.querySelectorAll(".expand-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const text = btn.nextElementSibling;
+    text.style.display = text.style.display === "block" ? "none" : "block";
   });
 });
