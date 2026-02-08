@@ -1,57 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - Group 5</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.6; }
-    header { text-align:center; padding:30px 10px; color:white; }
-    nav { text-align:center; padding:10px 0; }
-    nav a { color:white; text-decoration:none; padding:12px 20px; display:inline-block; font-weight:bold; }
-    nav a:hover { opacity:0.8; }
-    section { padding:30px 20px; max-width:900px; margin:auto; text-align:center; }
-    footer { text-align:center; padding:15px; color:white; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us – Group 5</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <header>
+        <h1>High Cost of Machines in Agriculture and Fishery Arts</h1>
+        <p class="subtitle">Presented by Group 5</p>
+        <nav>
+            <button onclick="navigate('index.html')">Home</button>
+            <button onclick="navigate('solution.html')">Solution</button>
+            <button onclick="navigate('about.html')">About Us</button>
+        </nav>
+    </header>
 
-<header>
-  <h1>About Us</h1>
-</header>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="solution.html">Solution</a>
-  <a href="about.html">About Us</a>
-</nav>
-
-<section>
-  <p>Group 5 Members:</p>
-  <ul style="list-style:none; padding:0;">
-    <li>Member 1</li>
-    <li>Member 2</li>
-    <li>Member 3</li>
-    <li>Member 4</li>
-    <li>Member 5</li>
-  </ul>
-</section>
-
-<footer>
-  Moneymachines.com
-</footer>
-
-<script>
-const colors = ['#4CAF50', '#FF5733', '#2196F3', '#9C27B0', '#FFEB3B', '#E91E63'];
-function changeColor() {
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    document.body.style.backgroundColor = randomColor;
-    document.querySelector('nav').style.backgroundColor = randomColor;
-    document.querySelector('footer').style.backgroundColor = randomColor;
-}
-setInterval(changeColor, 2000);
-</script>
-
+    <main>
+        <section class="section" id="about-us">
+            <h2>Group Members</h2>
+            <ul>
+                <li><strong>Member 1:</strong> Role</li>
+                <li><strong>Member 2:</strong> Role</li>
+                <li><strong>Member 3:</strong> Role</li>
+                <li><strong>Member 4:</strong> Role</li>
+                <li><strong>Member 5:</strong> Role</li>
+            </ul>
+        </section>
+    </main>
 </body>
 </html>
 
