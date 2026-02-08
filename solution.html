@@ -2,76 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AFA RCA | Solution</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <title>Solution - High Cost of Machines</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.6; }
+    header { text-align:center; padding:30px 10px; color:white; }
+    nav { text-align:center; padding:10px 0; }
+    nav a { color:white; text-decoration:none; padding:12px 20px; display:inline-block; font-weight:bold; }
+    nav a:hover { opacity:0.8; }
+    section { padding:30px 20px; max-width:900px; margin:auto; }
+    footer { text-align:center; padding:15px; color:white; }
+    ul { max-width: 700px; margin:auto; }
+  </style>
 </head>
-
 <body>
 
 <header>
-  <h1>Proposed Solution</h1>
-  <p class="subtitle">
-    Reducing Learning Barriers Caused by Expensive Agricultural Machines
-  </p>
+  <h1>Solutions for Limited Machine Access</h1>
 </header>
 
 <nav>
-  <a href="index.html">HOME</a>
-  <a href="solution.html">SOLUTION</a>
-  <a href="about.html">ABOUT</a>
+  <a href="index.html">Home</a>
+  <a href="solution.html">Solution</a>
+  <a href="about.html">About Us</a>
 </nav>
 
-<main>
-
-  <section class="card">
-    <h2>Combined Virtual Simulation Tools</h2>
-    <p>
-      The proposed solution is the use of combined virtual simulation tools to teach
-      agricultural and fishery machine operation. These simulations allow learners to
-      explore how machines function without physically owning or operating real equipment.
-    </p>
-    <p>
-      For example, a virtual tractor simulation can demonstrate how land is prepared,
-      while a digital harvester simulation shows proper harvesting techniques. In fishery,
-      simulations can present boat navigation and equipment handling.
-    </p>
-  </section>
-
-  <section class="card">
-    <h2>Poster-Based Learning Integration</h2>
-    <p>
-      Each virtual simulation is supported by an educational poster that explains the
-      machine’s purpose, main parts, and real-life applications. Posters provide visual
-      guidance that helps learners understand machines step by step.
-    </p>
-    <p>
-      By combining posters and simulations, students gain both theoretical knowledge and
-      practical understanding, even without direct access to costly machines.
-    </p>
-  </section>
-
-  <section class="card">
-    <h2>Application in Agriculture and Fishery Arts</h2>
-    <p>
-      This solution can be applied in classrooms, training centers, and community learning
-      spaces. Students can develop confidence and skills through simulations before
-      handling real machines when necessary.
-    </p>
-    <p>
-      As a result, learning becomes more accessible, safer, and less dependent on owning
-      expensive agricultural equipment.
-    </p>
-  </section>
-
-</main>
-
-<button class="theme-btn">Change Theme</button>
+<section>
+  <ul>
+    <li><strong>Virtual Tools:</strong> Use online simulations and virtual training to let students practice machine operation safely and without cost.</li>
+    <li><strong>Posters and Visual Guides:</strong> Display step-by-step guides and posters showing how to operate machines, so students can learn even without direct access.</li>
+  </ul>
+</section>
 
 <footer>
-  Group 5 — AFA RCA Project
+  Moneymachines.com
 </footer>
 
-<script src="script.js"></script>
+<script>
+const colors = ['#4CAF50', '#FF5733', '#2196F3', '#9C27B0', '#FFEB3B', '#E91E63'];
+function changeColor() {
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    document.body.style.backgroundColor = randomColor;
+    document.querySelector('nav').style.backgroundColor = randomColor;
+    document.querySelector('footer').style.backgroundColor = randomColor;
+}
+setInterval(changeColor, 2000);
+</script>
+
 </body>
 </html>
