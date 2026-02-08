@@ -1,38 +1,17 @@
-// SCROLL REVEAL
-const cards = document.querySelectorAll(".card");
+// Function to navigate pages
+function navigate(page) {
+    window.location.href = page;
+}
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = "1";
-      entry.target.style.transform = "translateY(0)";
-    }
-  });
-}, { threshold: 0.2 });
+// Color-changing background
+let colors = ["#FFDDC1", "#C1FFD7", "#C1D4FF", "#FFFAC1", "#FFC1E3"];
+let index = 0;
 
-cards.forEach(card => observer.observe(card));
+function changeBackground() {
+    document.body.style.backgroundColor = colors[index];
+    index = (index + 1) % colors.length;
+}
 
-// COLOR THEMES (SAME VIBE ONLY)
-const themes = [
-  { bg:"#0f172a", card:"#111827", accent:"#22d3ee", soft:"#67e8f9" },
-  { bg:"#020617", card:"#020617", accent:"#38bdf8", soft:"#7dd3fc" },
-  { bg:"#020617", card:"#111827", accent:"#2dd4bf", soft:"#5eead4" }
-];
+// Change color every 3 seconds
+setInterval(changeBackground, 3000);
 
-let current = 0;
-document.querySelector(".theme-btn").addEventListener("click", () => {
-  current = (current + 1) % themes.length;
-  const t = themes[current];
-  document.documentElement.style.setProperty("--bg", t.bg);
-  document.documentElement.style.setProperty("--card", t.card);
-  document.documentElement.style.setProperty("--accent", t.accent);
-  document.documentElement.style.setProperty("--accent-soft", t.soft);
-});
-
-// EXPAND BUTTONS
-document.querySelectorAll(".expand-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const text = btn.nextElementSibling;
-    text.style.display = text.style.display === "block" ? "none" : "block";
-  });
-});
