@@ -1,52 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Group 5</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Group 5</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.6; }
+    header { text-align:center; padding:30px 10px; color:white; }
+    nav { text-align:center; padding:10px 0; }
+    nav a { color:white; text-decoration:none; padding:12px 20px; display:inline-block; font-weight:bold; }
+    nav a:hover { opacity:0.8; }
+    section { padding:30px 20px; max-width:900px; margin:auto; text-align:center; }
+    footer { text-align:center; padding:15px; color:white; }
+  </style>
 </head>
-
 <body>
 
 <header>
-  <h1>About Group 5</h1>
-  <p class="subtitle">
-    Agriculture and Fishery Arts (AFA) — High Cost of Machines
-  </p>
+  <h1>About Us</h1>
 </header>
 
 <nav>
   <a href="index.html">Home</a>
   <a href="solution.html">Solution</a>
-  <a href="about.html">About</a>
+  <a href="about.html">About Us</a>
 </nav>
 
-<main>
-
-<section class="card">
-  <h2>Group Members and Roles</h2>
-  <p>
-    This Root Cause Analysis project was completed by Group 5. Each member
-    was assigned a specific role to ensure effective teamwork and clear
-    presentation of ideas.
-  </p>
-
-  <ul class="members">
-    <li><strong>Mykyle faltado</strong> — Group Facilitator/li>
-    <li><strong>Xilleane Aadi</strong> — Scribe/li>
-    <li><strong>Iyah Maye</strong> — Scribe/li>
-    <li><strong>Gil Benedict</strong> — Spokesperson</li>
-    <li><strong>Joey Borja</strong> — Spokesperson</li>
+<section>
+  <p>Group 5 Members:</p>
+  <ul style="list-style:none; padding:0;">
+    <li>Member 1</li>
+    <li>Member 2</li>
+    <li>Member 3</li>
+    <li>Member 4</li>
+    <li>Member 5</li>
   </ul>
 </section>
 
-</main>
-
 <footer>
-  Group 5 — AFA Root Cause Analysis
+  Moneymachines.com
 </footer>
 
-<script src="script.js"></script>
+<script>
+const colors = ['#4CAF50', '#FF5733', '#2196F3', '#9C27B0', '#FFEB3B', '#E91E63'];
+function changeColor() {
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    document.body.style.backgroundColor = randomColor;
+    document.querySelector('nav').style.backgroundColor = randomColor;
+    document.querySelector('footer').style.backgroundColor = randomColor;
+}
+setInterval(changeColor, 2000);
+</script>
+
 </body>
 </html>
+
