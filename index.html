@@ -1,115 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The High Cost of Machines in Agriculture and Fishery</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-    header {
-      text-align: center;
-      padding: 30px 10px;
-      color: white;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-    header p {
-      margin: 5px 0 0 0;
-      font-size: 16px;
-      font-style: italic;
-    }
-    nav {
-      text-align: center;
-      padding: 10px 0;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 12px 20px;
-      display: inline-block;
-      font-weight: bold;
-    }
-    nav a:hover {
-      opacity: 0.8;
-    }
-    section {
-      padding: 30px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    img.hero-img {
-      width: 100%;
-      max-width: 800px;
-      display: block;
-      margin: 20px auto;
-      border-radius: 12px;
-    }
-    p.caption {
-      text-align: center;
-      font-size: 14px;
-      color: gray;
-      margin-top: -10px;
-      margin-bottom: 30px;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      color: white;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Cost of Machines in Agriculture and Fishery Arts</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <header>
+        <h1>High Cost of Machines in Agriculture and Fishery Arts</h1>
+        <p class="subtitle">Presented by Group 5</p>
+        <nav>
+            <button onclick="navigate('index.html')">Home</button>
+            <button onclick="navigate('solution.html')">Solution</button>
+            <button onclick="navigate('about.html')">About Us</button>
+        </nav>
+    </header>
 
-<header>
-  <h1>The High Cost of Machines in Agriculture and Fishery</h1>
-  <p>Presented by Group 5</p>
-</header>
+    <main>
+        <section class="section" id="introduction">
+            <h2>Introduction</h2>
+            <p>We chose Agriculture and Fishery Arts (AFA) because farming and fishing need machines. Machines help produce more, but they are very expensive. This website explains the problem and why it is hard for small farmers to afford these machines.</p>
+        </section>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="solution.html">Solution</a>
-  <a href="about.html">About Us</a>
-</nav>
-
-<section>
-  <h2>Introduction</h2>
-  <p>
-    Agriculture and Fishery Arts (AFA) is a TLE learning area that teaches students practical skills using machines to improve efficiency and productivity in farming, fishing, and food processing. This website focuses on how the high cost of machines affects students’ hands-on learning.
-  </p>
-</section>
-
-<section>
-  <h2>Root Cause Analysis (RCA)</h2>
-  <p>
-    The main root cause of the problem is the high cost of machines. Prices are affected by advanced technology, import fees, and maintenance. Schools often cannot afford to buy machines, and borrowing through partnerships is not always reliable. This limits students’ access to practical, hands-on learning.
-  </p>
-</section>
-
-<img src="25af11f4-0ea6-4e33-aff7-0e96d1357e6e.png" alt="Drone used in agriculture" class="hero-img">
-<p class="caption">Drones are modern agricultural machines that help improve efficiency but are often costly.</p>
-
-<footer>
-  Moneymachines.com
-</footer>
-
-<!-- JavaScript for color-changing background -->
-<script>
-const colors = ['#4CAF50', '#FF5733', '#2196F3', '#9C27B0', '#FFEB3B', '#E91E63'];
-function changeColor() {
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    document.body.style.backgroundColor = randomColor;
-    document.querySelector('nav').style.backgroundColor = randomColor;
-    document.querySelector('footer').style.backgroundColor = randomColor;
-}
-setInterval(changeColor, 2000);
-</script>
-
+        <section class="section" id="rca">
+            <h2>Root Cause Analysis (RCA)</h2>
+            <p>The main problem is the high cost of machines. Tractors, harvesters, and fishing boats are very expensive, and farmers can't easily buy or maintain them. This makes farming harder, reduces income, and affects food supply. The root cause is advanced technology, import taxes, and lack of financial support for small farmers.</p>
+        </section>
+    </main>
 </body>
 </html>
+
