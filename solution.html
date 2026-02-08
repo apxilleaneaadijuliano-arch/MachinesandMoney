@@ -1,53 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solution - High Cost of Machines</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.6; }
-    header { text-align:center; padding:30px 10px; color:white; }
-    nav { text-align:center; padding:10px 0; }
-    nav a { color:white; text-decoration:none; padding:12px 20px; display:inline-block; font-weight:bold; }
-    nav a:hover { opacity:0.8; }
-    section { padding:30px 20px; max-width:900px; margin:auto; }
-    footer { text-align:center; padding:15px; color:white; }
-    ul { max-width: 700px; margin:auto; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution – High Cost of Machines</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <header>
+        <h1>High Cost of Machines in Agriculture and Fishery Arts</h1>
+        <p class="subtitle">Presented by Group 5</p>
+        <nav>
+            <button onclick="navigate('index.html')">Home</button>
+            <button onclick="navigate('solution.html')">Solution</button>
+            <button onclick="navigate('about.html')">About Us</button>
+        </nav>
+    </header>
 
-<header>
-  <h1>Solutions for Limited Machine Access</h1>
-</header>
+    <main>
+        <section class="section" id="virtual-tools">
+            <h2>Combine Virtual Tools</h2>
+            <p>Our solution is to combine virtual simulation tools with makerspace access. This lets students practice using machines virtually first, so they learn the skills without buying expensive equipment. They only use the real machines when needed. This saves money and helps more students learn efficiently.</p>
+        </section>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="solution.html">Solution</a>
-  <a href="about.html">About Us</a>
-</nav>
-
-<section>
-  <ul>
-    <li><strong>Virtual Tools:</strong> Use online simulations and virtual training to let students practice machine operation safely and without cost.</li>
-    <li><strong>Posters and Visual Guides:</strong> Display step-by-step guides and posters showing how to operate machines, so students can learn even without direct access.</li>
-  </ul>
-</section>
-
-<footer>
-  Moneymachines.com
-</footer>
-
-<script>
-const colors = ['#4CAF50', '#FF5733', '#2196F3', '#9C27B0', '#FFEB3B', '#E91E63'];
-function changeColor() {
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    document.body.style.backgroundColor = randomColor;
-    document.querySelector('nav').style.backgroundColor = randomColor;
-    document.querySelector('footer').style.backgroundColor = randomColor;
-}
-setInterval(changeColor, 2000);
-</script>
-
+        <section class="section" id="poster">
+            <h2>Poster</h2>
+            <p>Each virtual simulation tool will have a poster that explains how it works and shows important information. Posters make it easier to understand the machines and techniques without using them all the time.</p>
+        </section>
+    </main>
 </body>
 </html>
